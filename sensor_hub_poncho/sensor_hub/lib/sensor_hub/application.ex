@@ -34,9 +34,9 @@ defmodule SensorHub.Application do
   else
     defp target_children() do
       [
-        # Children for all targets except host
-        # Starts a worker by calling: Target.Worker.start_link(arg)
-        # {Target.Worker, arg},
+        {SGP40, [name: SGP40]},
+        {BMP280, [i2c_address: 0x77, name: BMP280]},
+        {VEML6030, %{}}
       ]
     end
   end
