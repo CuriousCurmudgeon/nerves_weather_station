@@ -47,6 +47,7 @@ defmodule SensorHub.MixProject do
       {:shoehorn, "~> 0.9.1"},
       {:ring_logger, "~> 0.11.0"},
       {:toolshed, "~> 0.4.0"},
+      {:circuits_i2c, "~> 2.0"},
 
       # Allow Nerves.Runtime on host to support development, testing and CI.
       # See config/host.exs for usage.
@@ -55,6 +56,8 @@ defmodule SensorHub.MixProject do
       # Dependencies for all targets except :host
       {:nerves_pack, "~> 0.7.1", targets: @all_targets},
       {:veml6030, path: "../veml6030", targets: @all_targets},
+      {:sgp40, "~> 0.1.6", targets: @all_targets},
+      {:bmp280, "~> 0.2.13", targets: @all_targets},
 
       # Dependencies for specific targets
       # NOTE: It's generally low risk and recommended to follow minor version
@@ -72,8 +75,7 @@ defmodule SensorHub.MixProject do
       {:nerves_system_osd32mp1, "~> 0.15", runtime: false, targets: :osd32mp1},
       {:nerves_system_x86_64, "~> 1.24", runtime: false, targets: :x86_64},
       {:nerves_system_grisp2, "~> 0.8", runtime: false, targets: :grisp2},
-      {:nerves_system_mangopi_mq_pro, "~> 0.6", runtime: false, targets: :mangopi_mq_pro},
-      {:circuits_i2c, "~> 2.0"}
+      {:nerves_system_mangopi_mq_pro, "~> 0.6", runtime: false, targets: :mangopi_mq_pro}
     ]
   end
 
